@@ -14,10 +14,14 @@ import {Octicons, Ionicons, Fontisto} from '@expo/vector-icons';
 
 const {brand, darkLight, primary} = Colors;
 
+// keyboard avoiding view
+import KeyboardAvoidingWrapper from '../components/Keyboardavoidingwrapper';
+
 const Login = () => {
   const [hidePassword, setHidePassword] = useState(true);
   const siteLogo = require('../assets/kidsland.png');
   return (
+    <KeyboardAvoidingWrapper>
     <StyledContainer>
         <StatusBar style="dark" />
         <InnerContainer>
@@ -75,6 +79,7 @@ const Login = () => {
             </Formik>
         </InnerContainer>
     </StyledContainer>
+    </KeyboardAvoidingWrapper>
   )
 }
 

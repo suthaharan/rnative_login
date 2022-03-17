@@ -15,7 +15,8 @@ import {Octicons, Ionicons, Fontisto} from '@expo/vector-icons';
 const {brand, darkLight, primary} = Colors;
 //Datetimepicker
 import DateTimePicker from '@react-native-community/datetimepicker';
-
+// keyboard avoiding view
+import KeyboardAvoidingWrapper from '../components/Keyboardavoidingwrapper';
 
 const Signup = () => {
 
@@ -37,6 +38,7 @@ const Signup = () => {
     setShow(true);
   }
   return (
+    <KeyboardAvoidingWrapper>
     <StyledContainer>
         <StatusBar style="dark" />
         <InnerContainer>
@@ -131,6 +133,7 @@ const Signup = () => {
             </Formik>
         </InnerContainer>
     </StyledContainer>
+    </KeyboardAvoidingWrapper>
   )
 }
 

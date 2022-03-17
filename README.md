@@ -34,3 +34,6 @@ $ expo install @react-native-community/datetimepicker
 
 ```
 $ npm install native-base --save
+
+* Add in support for keyboard avoiding view
+* 
