@@ -11,7 +11,7 @@ import {
 import {Octicons, Ionicons} from '@expo/vector-icons';
 
 
-const Welcome = () => {
+const Welcome = ({navigation}) => {
   const siteLogo = require('../assets/kidsland.png');
   return (
     <>
@@ -27,7 +27,7 @@ const Welcome = () => {
             <StyledFormArea>
                 <Avavtar resizeMode="cover" source={siteLogo} />
                 <Line />
-                <StyledButton onPress={() => {}}>
+                <StyledButton onPress={() => {navigation.navigate('Login')}}>
                     <ButtonText>Logout</ButtonText>    
                 </StyledButton> 
             </StyledFormArea>

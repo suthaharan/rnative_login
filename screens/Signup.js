@@ -18,7 +18,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 // keyboard avoiding view
 import KeyboardAvoidingWrapper from '../components/Keyboardavoidingwrapper';
 
-const Signup = () => {
+const Signup = ({navigation}) => {
 
   const [hidePassword, setHidePassword] = useState(true);
   const [show, setShow] = useState(false);
@@ -58,6 +58,7 @@ const Signup = () => {
                 initialValues={{email: '', password: '', confirmpassword: '', dateofbirth:'', fullname: ''}}
                 onSubmit={(values) => {
                     console.log(values);
+                    navigation.navigate('Welcome');
                 }}
             >
             {({handleChange, handleBlur, handleSubmit, values, isPassword}) => (<StyledFormArea>
@@ -120,12 +121,12 @@ const Signup = () => {
                     />        
                     <MsgBox>...</MsgBox>
                 <StyledButton onPress={handleSubmit}>
-                    <ButtonText>Login</ButtonText>    
+                    <ButtonText>Signup</ButtonText>    
                 </StyledButton>
                 <Line />
                 <ExtraView>
                     <ExtraText>Already registered? </ExtraText>
-                    <TextLink>
+                    <TextLink onPress={()=> navigation.navigate('Login')}>
                         <TextLinkContent>Sign-in</TextLinkContent>
                     </TextLink>
                 </ExtraView>

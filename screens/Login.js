@@ -17,7 +17,7 @@ const {brand, darkLight, primary} = Colors;
 // keyboard avoiding view
 import KeyboardAvoidingWrapper from '../components/Keyboardavoidingwrapper';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [hidePassword, setHidePassword] = useState(true);
   const siteLogo = require('../assets/kidsland.png');
   return (
@@ -33,6 +33,7 @@ const Login = () => {
                 initialValues={{email: '', password: ''}}
                 onSubmit={(values) => {
                     console.log(values);
+                    navigation.navigate("Welcome");
                 }}
             >
             {({handleChange, handleBlur, handleSubmit, values, isPassword}) => (<StyledFormArea>
@@ -50,7 +51,7 @@ const Login = () => {
                 <MyTextInput 
                     label="Password"
                     icon="lock"
-                    placeholder="*******"
+                    placeholder="* * * * * * *"
                     placeholderTextColor={darkLight}
                     onChangeText={handleChange('password')}
                     onBlur={handleBlur('password')}
@@ -60,7 +61,7 @@ const Login = () => {
                     hidePassword={hidePassword}
                     setHidePassword={setHidePassword}
                     />    
-                    <MsgBox>...</MsgBox>
+                <MsgBox>...</MsgBox>
                 <StyledButton onPress={handleSubmit}>
                     <ButtonText>Login</ButtonText>    
                 </StyledButton>
@@ -71,7 +72,7 @@ const Login = () => {
                 </StyledButton>
                 <ExtraView>
                     <ExtraText>Don't have an account? </ExtraText>
-                    <TextLink>
+                    <TextLink onPress={() =>  navigation.navigate("Signup")}>
                         <TextLinkContent>Sign-up</TextLinkContent>
                     </TextLink>
                 </ExtraView>

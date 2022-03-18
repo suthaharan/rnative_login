@@ -35,5 +35,13 @@ $ expo install @react-native-community/datetimepicker
 ```
 $ npm install native-base --save
 
-* Add in support for keyboard avoiding view
-* 
+* Add in support for keyboard avoiding view when form input is chosen
+  
+#### Screen to Screen Navigation
+
+* Visit React Navigation [https://reactnavigation.org/docs/getting-started/]
+```
+$ npm install @react-navigation/native
+$ expo install react-native-screens react-native-safe-area-context
+```
+
